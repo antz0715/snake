@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!--This line tells the browser that this document is an HTML5 document, the latest version of HTML.-->
+<html lang="en"><!--The <html> tag wraps all the content on your web page. The lang="en" attribute tells the browser that the content is in English.-->
+<head> <!--This section contains information about the webpage that isn't shown directly on the web page itself:-->
+  <meta charset="UTF-8"> <!-- Ensures that the browser uses the correct character set that supports many languages.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Makes sure the game looks good on both desktops and mobile devices by setting the size of the viewport.-->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--Tells older versions of Internet Explorer to use the latest rendering engine.-->
+  <title>Snake</title> <!-- Sets the name of the tab in your browser to "Snake."-->
+  <style>
+    body { /*This style makes the entire page*/
+      /*Stretch to fill the whole screen*/
+      height: 100vh;
+      width: 100vw;
+      /*100% of the viewport height and width.*/
+      
+      
+      /*Center the game board in the middle of the screen using flexbox*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0; /*Have no extra space around the edges (margin: 0).*/
+      background-color: black; /*Have a black background color. */
+    }
+
+    #game-board { /*This style sets up the grid for the snake game:*/
+      background-color: #CCC;
+      width: 100vmin;
+      height: 100vmin;
+      display: grid;
+      grid-template-rows: repeat(21, 1fr); /*it's divided into 21 rows and 21 columns */
+      grid-template-columns: repeat(21, 1fr);
+    }
+
+    .snake {
+      background-color: hsl(200, 100%, 50%);
+      border: .25vmin solid black; /* small black border*/
+    }
+
+    .food {
+      background-color: hsl(50, 100%, 50%);
+      border: .25vmin solid black;
+    }
+  </style>
+  <script src="game.js" defer type="module"></script> <!-- This line includes the JavaScript file named game.js that controls the game's logic.-->
+  <!--the defer attribute tells the browser to wait to run the script until after the HTML has fully loaded-->
+  <!--type="module" tells the browser that this script uses JavaScript modules for cleaner, modular code-->
+
+</head>
+<body> <!--This is where all the visible parts of your webpage are placed:-->
+  <div id="game-board"></div> <!-- This is where your snake game will appear. It's like the canvas for the game.-->
+</body>
+</html>
